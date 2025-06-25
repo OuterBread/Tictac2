@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#CDEFF2"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_view_X"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player X : 0"
+            android:textColor="#248E7E"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/text_view_O"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_X"
+            android:layout_marginTop="5sp"
+            android:text="Player O : 0"
+            android:textColor="#248D7D"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button_R"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginRight="27dp"
+            android:background="#248C7C"
+            android:text="Reset"
+            android:textColor="#CCEDF0"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_O"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:textColor="#248C7C"
+
+            android:text="Player X's Turn"
+            android:textSize="30sp" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:orientation="horizontal">
+        <Button
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button00"
+            android:background="#248B7B"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button01"
+            android:background="#248B7B"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button02"
+            android:background="#248B7B"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:orientation="horizontal">
+        <Button
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button10"
+            android:background="#248B7B"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button11"
+            android:background="#248A7A"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1"
+            android:background="#248A7A" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:orientation="horizontal">
+        <Button
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button20"
+            android:background="#248A7A"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button21"
+            android:background="#248979"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button22"
+            android:background="#248979"
+            android:layout_margin="5sp"
+            android:textSize="35sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CST-7-1-B 2025.June"/>
+
+
+
+
+
+</LinearLayout>
