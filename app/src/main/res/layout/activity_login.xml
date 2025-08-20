@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#248C7C">
+
+    <EditText
+        android:id="@+id/editTextPlayerX"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Player X Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextPlayerO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Player O Name"
+        android:inputType="textPersonName"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/buttonStartGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Game"
+        android:layout_marginTop="24dp"
+        android:textColor="#36373E"
+        android:padding="24dp"
+        android:background="#37F0BF"
+        />
+</LinearLayout>

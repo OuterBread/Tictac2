@@ -1,97 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#CDEFF2"
+    android:layout_marginTop="25dp"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        >
 
-        <TextView
-            android:id="@+id/text_view_X"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Player X : 0"
-            android:textColor="#248E7E"
-            android:textSize="30sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/text_view_O"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_view_X"
-            android:layout_marginTop="5sp"
-            android:text="Player O : 0"
-            android:textColor="#248D7D"
-            android:textSize="30sp" />
+            <TextView
+                android:id="@+id/text_view_X"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player X : 0"
+                android:layout_marginLeft="30dp"
+                android:textColor="#248E7E"
+                android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/button_R"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/text_view_O"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
 
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="27dp"
-            android:layout_marginRight="27dp"
-            android:background="#248C7C"
-            android:text="Reset"
-            android:textColor="#CCEDF0"
-            android:textSize="26sp" />
+                android:text="Player O : 0"
+                android:textColor="#248D7D"
+                android:textSize="25dp" />
 
-        <TextView
-            android:id="@+id/textViewStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_view_O"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="24dp"
-            android:textColor="#248C7C"
+        </LinearLayout>
 
-            android:text="Player X's Turn"
-            android:textSize="30sp" />
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
 
+           <TextView
+               android:id="@+id/textViewStatus"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+               android:layout_marginTop="12dp"
+               android:layout_centerHorizontal="true"
+               android:layout_marginBottom="24dp"
+               android:textColor="#248C7C"
 
-    </RelativeLayout>
+               android:text="Player X's Turn"
+               android:textSize="25dp" />
+       </LinearLayout>
+
+    </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
+
         <Button
 
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:id="@+id/button00"
-            android:background="#248B7B"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+
             android:layout_margin="5sp"
-            android:textSize="35sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/rounded_button"
+            android:textSize="35sp" />
 
         <Button
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:id="@+id/button01"
-            android:background="#248B7B"
+            android:background="@drawable/rounded_button"
             android:layout_margin="5sp"
             android:textSize="35sp"
             android:layout_weight="1"/>
         <Button
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:id="@+id/button02"
-            android:background="#248B7B"
+            android:background="@drawable/rounded_button"
             android:layout_margin="5sp"
             android:textSize="35sp"
             android:layout_weight="1"/>
@@ -99,25 +107,26 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
         <Button
 
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:id="@+id/button10"
-            android:background="#248B7B"
+            android:background="@drawable/rounded_button"
             android:layout_margin="5sp"
             android:textSize="35sp"
             android:layout_weight="1" />
 
         <Button
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:id="@+id/button11"
-            android:background="#248A7A"
+            android:background="@drawable/rounded_button"
             android:layout_margin="5sp"
             android:textSize="35sp"
             android:layout_weight="1"/>
@@ -125,54 +134,97 @@
         <Button
             android:id="@+id/button12"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:layout_margin="5sp"
             android:textSize="35sp"
             android:layout_weight="1"
-            android:background="#248A7A" />
+            android:background="@drawable/rounded_button" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
 
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
         <Button
 
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:id="@+id/button20"
-            android:background="#248A7A"
+            android:background="@drawable/rounded_button"
             android:layout_margin="5sp"
             android:textSize="35sp"
             android:layout_weight="1" />
 
         <Button
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:id="@+id/button21"
-            android:background="#248979"
+            android:background="@drawable/rounded_button"
             android:layout_margin="5sp"
             android:textSize="35sp"
             android:layout_weight="1"/>
         <Button
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:id="@+id/button22"
-            android:background="#248979"
+            android:background="@drawable/rounded_button"
             android:layout_margin="5sp"
             android:textSize="35sp"
             android:layout_weight="1"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+    <Button
+        android:id="@+id/button_R"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="14dp"
+       android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="27dp"
+
+        android:background="@drawable/rounded_button_2"
+        android:text="Reset Board"
+        android:textColor="#CCEDF0"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button_RRR"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/rounded_button_2"
+        android:text="Reset Score"
+        android:textColor="#CCEDF0"
+        android:textSize="20sp" />
+
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:text="CST-7-1-B 2025.June"/>
 
 
 
 
-
 </LinearLayout>
+

@@ -1,9 +1,11 @@
 package com.example.tictac2;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,22 +13,34 @@ public class MainActivity extends AppCompatActivity {
     private Button[][] buttons = new Button[3][3];
     private boolean playerXTurn = true;
     private int roundCount = 0;
-    private int pxs=0;
-    private int pos=0;
+    private int pxs = 0;
+    private int pos = 0;
+
+    private String playerXName = "Player X";
+    private String playerOName = "Player O";
+
     private TextView textViewStatus;
-    private Button resetButton;
+    private Button resetButton,resetScoreButton;
     private TextView playerXScore;
     private TextView playerOScore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        playerOScore= findViewById(R.id.text_view_O);
-        playerXScore= findViewById(R.id.text_view_X);
+        // Get player names from intent
+        playerXName = getIntent().getStringExtra("PLAYER_X_NAME");
+        playerOName = getIntent().getStringExtra("PLAYER_O_NAME");
 
+        if (playerXName == null) playerXName = "Player X";
+        if (playerOName == null) playerOName = "Player O";
+
+        playerXScore = findViewById(R.id.text_view_X);
+        playerOScore = findViewById(R.id.text_view_O);
         textViewStatus = findViewById(R.id.textViewStatus);
         resetButton = findViewById(R.id.button_R);
+        resetScoreButton = findViewById(R.id.button_RRR);
 
         // Initialize buttons
         for (int i = 0; i < 3; i++) {
@@ -40,7 +54,19 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        // Set initial scores and turn status
+        updateScores();
+        textViewStatus.setText(playerXName + "'s Turn");
+
         resetButton.setOnClickListener(v -> resetGame());
+        resetScoreButton.setOnClickListener(v -> resetScore());
+    }
+
+    private void resetScore() {
+        pxs = 0;
+        pos =0 ;
+        updateScores();
+        resetGame();
     }
 
     private void onButtonClick(int i, int j) {
@@ -54,18 +80,18 @@ public class MainActivity extends AppCompatActivity {
         if (checkForWin()) {
             if (playerXTurn) {
                 pxs++;
-                playerXScore.setText("Player X:" + pxs);
-                showWinner("Player X wins!");
+                updateScores();
+                showWinner(playerXName + " wins!");
             } else {
                 pos++;
-                playerOScore.setText("Player O:"+ pos);
-                showWinner("Player O wins!");
+                updateScores();
+                showWinner(playerOName + " wins!");
             }
         } else if (roundCount == 9) {
             showWinner("It's a draw!");
         } else {
             playerXTurn = !playerXTurn;
-            textViewStatus.setText("Player " + (playerXTurn ? "X" : "O") + "'s Turn");
+            textViewStatus.setText((playerXTurn ? playerXName : playerOName) + "'s Turn");
         }
     }
 
@@ -92,9 +118,11 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private void showWinner(String winner) {
-        textViewStatus.setText(winner);
+    private void showWinner(String winnerMessage) {
+        textViewStatus.setText(winnerMessage);
+        Toast.makeText(this, winnerMessage, Toast.LENGTH_SHORT).show();
         disableAllButtons();
+        new Handler().postDelayed(this::resetGame, 2000);
     }
 
     private void disableAllButtons() {
@@ -109,8 +137,14 @@ public class MainActivity extends AppCompatActivity {
                 b.setText("");
                 b.setEnabled(true);
             }
+
         roundCount = 0;
         playerXTurn = true;
-        textViewStatus.setText("Player X's Turn");
+        textViewStatus.setText(playerXName + "'s Turn");
+    }
+
+    private void updateScores() {
+        playerXScore.setText(playerXName + ": " + pxs);
+        playerOScore.setText(playerOName + ": " + pos);
     }
 }
